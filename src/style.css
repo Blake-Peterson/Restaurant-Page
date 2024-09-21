@@ -3,10 +3,22 @@
   margin: 0;
 }
 
+button {
+}
+
+ul {
+}
+
+li {
+}
+
 #container {
   width: 100%;
   height: auto;
   background-color: aqua;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+}
+
+#content {
 }
