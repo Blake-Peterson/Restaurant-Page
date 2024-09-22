@@ -22,7 +22,11 @@ function createCard(cardInfo){
 function createCards(index, cardsNeeded){
     let cardArray = [cardsNeeded];
     for(let i=0;i<cardsNeeded;i++){
-        if(index ===1){
+        if(index ===1){ //menu
+
+        } else if (index ===2){ //about
+
+        } else {//default home page
             const home = createHome();
             cardArray [0]=createCard(home[0]);
             cardArray [1]=createCard(home[1]);

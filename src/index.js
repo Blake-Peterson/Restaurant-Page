@@ -19,17 +19,24 @@ function displayContent(btn){
     switch(btn){
         case homeBtn:
             console.log("home button clicked");
-            createHome();
+            page = createCards(0,3);
+            for(let i=0;i<3;i++){
+                contentDiv.appendChild(page[i]);
+            }
             break;
         case menuBtn:
             console.log("menu button clicked");
             break;
         case aboutBtn:
             console.log("about button clicked");
+            page = createCards(2,3);
+            for(let i=0;i<3;i++){
+                contentDiv.appendChild(page[i]);
+            }
             break;
         default:
             console.log("hello world");
-            page = createCards(1,3);
+            page = createCards(0,3);
             for(let i=0;i<3;i++){
                 contentDiv.appendChild(page[i]);
             }
