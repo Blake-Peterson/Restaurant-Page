@@ -4,6 +4,9 @@
 }
 
 button {
+  width: 12em;
+  height: 4em;
+  margin: 1em 3em;
 }
 
 ul {
@@ -15,10 +18,19 @@ li {
 #container {
   width: 100%;
   height: auto;
-  background-color: aqua;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  background-color: blue;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #content {
+}
+
+.inner {
+  width: 80%;
+  justify-content: center;
+}
+
+.outer {
 }
