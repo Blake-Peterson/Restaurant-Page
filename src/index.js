@@ -1,95 +1,55 @@
 import "./style.css";
 
+import { createHome } from "./home";
+import { createMenu} from "./menu";
+import { createAbout} from "./about";
+import { createCards } from "./card";
+
 console.log("Hello Customer");
 
 const container = document.querySelector("#container");
+const contentDiv = document.querySelector("#content");
 
+const homeBtn = document.querySelector("#home");
+const menuBtn = document.querySelector("#menu");
+const aboutBtn = document.querySelector("#about");
 
-
-
-function createHomePage(){
-    for(let i=0;i<3;i++){
-        switch(i){
-            case 0:
-                createSection("headline");
-                break;
-            case 1:
-                createSection("hours");
-                break;
-            case 2:
-                createSection("location");
-                break;
-        }
+function displayContent(btn){
+    let page = [];
+    switch(btn){
+        case homeBtn:
+            console.log("home button clicked");
+            createHome();
+            break;
+        case menuBtn:
+            console.log("menu button clicked");
+            break;
+        case aboutBtn:
+            console.log("about button clicked");
+            break;
+        default:
+            console.log("hello world");
+            page = createCards(1,3);
+            for(let i=0;i<3;i++){
+                contentDiv.appendChild(page[i]);
+            }
+            break;
     }
 }
 
-function createSection(section){
+homeBtn.addEventListener("click", () =>displayContent(homeBtn));
+menuBtn.addEventListener("click", () =>displayContent(menuBtn));
+aboutBtn.addEventListener("click", () =>displayContent(aboutBtn));
 
-    const outerDiv  = document.createElement("div");
-    outerDiv.classList.add("outer")
-    outerDiv.style.backgroundColor="purple";
-    outerDiv.textContent = "first dummy";
 
-    const innerDiv = document.createElement("div");
-    innerDiv.classList.add("inner");
-    innerDiv.style.backgroundColor="red";
-    innerDiv.textContent="Dummy lines";
-    outerDiv.appendChild(innerDiv);
-
-    const h2 = document.createElement("h2");
-    h2.textContent=section;
-    innerDiv.appendChild(h2);
-
-    container.appendChild(outerDiv);
+function clearContentDiv(){
 
 }
 
 
-function addReviewToHomePage(){
-
-}
-
-function addHoursToHomePage(){
-    const HoursDiv = createSection();
-    const list = document.createElement("ul");
-
-    for(let i=0;i<7;i++){
-        const listItem = document.createElement("li");
-        switch(i){
-            //Sunday -> Saturday
-            case 0:
-                listItem.textContent= "Sunday: 8am - 8pm";
-                break;
-            case 1:
-                listItem.textContent= "Monday: 7am - 10pm";
-                break;
-            case 2:
-                listItem.textContent= "Tuesday: 7am - 10pm";
-                break;
-            case 3:
-                listItem.textContent= "Wednesday: 7am - 10pm";
-                break;
-            case 4:
-                listItem.textContent= "Thursday: 7am - 10pm";
-                break;
-            case 5:
-                listItem.textContent= "Friday: 7am - 10pm";
-                break;
-            case 6:
-                listItem.textContent= "Saturday: 7am - 10pm";
-                break;
+displayContent();
 
 
 
-        
-        }
-    }
 
-}
 
-function addLocationToHomePage(){
-    const locationDiv = document.createElement("div");
-    const locationh2 = document.createElement("h2");
-}
-
-createHomePage();
