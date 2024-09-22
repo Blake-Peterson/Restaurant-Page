@@ -23,9 +23,15 @@ function createCards(index, cardsNeeded){
     let cardArray = [cardsNeeded];
     for(let i=0;i<cardsNeeded;i++){
         if(index ===1){ //menu
-
+            const menu = createMenu();
+            for(let i=0;i<cardsNeeded;i++){
+                cardArray[i] = createCard(menu[i]);
+            }
         } else if (index ===2){ //about
-
+            const about = createAbout();
+            for(let i=0;i<cardsNeeded;i++){
+                cardArray[i] = createCard(about[i]);
+            }
         } else {//default home page
             const home = createHome();
             cardArray [0]=createCard(home[0]);

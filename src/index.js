@@ -26,6 +26,10 @@ function displayContent(btn){
             break;
         case menuBtn:
             console.log("menu button clicked");
+            menu = createCards(1,8);
+            for(let i=0;i<3;i++){
+                contentDiv.appendChild(menu[i]);
+            }
             break;
         case aboutBtn:
             console.log("about button clicked");
