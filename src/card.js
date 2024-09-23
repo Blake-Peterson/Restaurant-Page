@@ -9,12 +9,10 @@ function createCard(cardInfo){
     const outerDiv  = document.createElement("div");
     outerDiv.classList.add("outer-card")
     outerDiv.style.backgroundColor="lightblue";
-    outerDiv.textContent = "outer";
 
     const innerDiv = document.createElement("div");
-    innerDiv.classList.add("inner");
+    innerDiv.classList.add("inner-card");
     innerDiv.style.backgroundColor="turquoise";
-    innerDiv.textContent="inner-card";
     outerDiv.appendChild(innerDiv);
     innerDiv.appendChild(cardInfo);
 
