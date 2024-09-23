@@ -11,6 +11,9 @@ button {
   background-color: blueviolet;
   border-radius: 4em;
   border: none;
+  font-weight: 600;
+  color: white;
+  font: 500;
 }
 
 p {
