@@ -1,18 +1,20 @@
 export {createCards};
 
 import { createHome } from "./home";
+import { createMenu} from "./menu";
+import { createAbout} from "./about";
 
 function createCard(cardInfo){
 
     const outerDiv  = document.createElement("div");
-    outerDiv.classList.add("outer")
+    outerDiv.classList.add("outer-card")
     outerDiv.style.backgroundColor="lightblue";
     outerDiv.textContent = "outer";
 
     const innerDiv = document.createElement("div");
     innerDiv.classList.add("inner");
     innerDiv.style.backgroundColor="turquoise";
-    innerDiv.textContent="inner";
+    innerDiv.textContent="inner-card";
     outerDiv.appendChild(innerDiv);
     innerDiv.appendChild(cardInfo);
 

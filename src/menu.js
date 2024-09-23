@@ -17,6 +17,7 @@ function createMenu(){
 function createMenuItem(foodName,description,cost,imagePath){
     const menuItemDiv = document.createElement("div");
     const foodNameHeader = document.createElement("h2");
+    foodNameHeader.textContent = foodName;
     menuItemDiv.appendChild(foodNameHeader);
 
     const descriptPara = document.createElement("p");
@@ -24,12 +25,11 @@ function createMenuItem(foodName,description,cost,imagePath){
     foodNameHeader.appendChild(descriptPara);
 
     const costPara = document.createElement("p");
-    costPara.textContent = cost;
+    costPara.textContent = "$"+cost;
     descriptPara.appendChild(costPara);
 
     const foodImage = document.createElement("image");
     descriptPara.appendChild(foodImage);
-
 
     return menuItemDiv;
 }

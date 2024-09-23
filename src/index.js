@@ -1,8 +1,6 @@
 import "./style.css";
 
-import { createHome } from "./home";
-import { createMenu} from "./menu";
-import { createAbout} from "./about";
+
 import { createCards } from "./card";
 
 console.log("Hello Customer");
@@ -19,6 +17,7 @@ function displayContent(btn){
     switch(btn){
         case homeBtn:
             console.log("home button clicked");
+            clearContentDiv();
             page = createCards(0,3);
             for(let i=0;i<3;i++){
                 contentDiv.appendChild(page[i]);
@@ -26,13 +25,16 @@ function displayContent(btn){
             break;
         case menuBtn:
             console.log("menu button clicked");
-            page = createCards(1,8);
-            for(let i=0;i<3;i++){
+            clearContentDiv();
+            const cardCount = 8;
+            page = createCards(1,cardCount);
+            for(let i=0;i<cardCount;i++){
                 contentDiv.appendChild(page[i]);
             }
             break;
         case aboutBtn:
             console.log("about button clicked");
+            clearContentDiv();
             page = createCards(2,3);
             for(let i=0;i<3;i++){
                 contentDiv.appendChild(page[i]);
@@ -54,7 +56,9 @@ aboutBtn.addEventListener("click", () =>displayContent(aboutBtn));
 
 
 function clearContentDiv(){
-
+    while(contentDiv.firstChild){
+        contentDiv.removeChild(contentDiv.firstChild);
+    }
 }
 
 
