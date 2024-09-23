@@ -6,17 +6,20 @@ function createHome(){
 }
 
 function addReviewToContent(){
+    const reviewDiv = document.createElement("div");
     const p = document.createElement("p");
     p.textContent = "Sky Scoops is a fantabulous restaurant for getting any kind of ice cream for all ages";
     const h3 = document.createElement("h3");
     h3.textContent="-Aquaman";
     p.appendChild(h3);
-
-    return p;
+    reviewDiv.appendChild(p);
+    return reviewDiv;
 }
 
 function addHoursToContent(){
+    const hoursDiv = document.createElement("div");
     const hoursH2 = document.createElement("h2");
+    hoursH2.textContent = "Hours";
     const ulist = document.createElement("ul");
     for(let i=0;i<7;i++){
         const listItem = document.createElement("li");
@@ -47,14 +50,15 @@ function addHoursToContent(){
         ulist.appendChild(listItem);
     }
     hoursH2.appendChild(ulist);
-    return hoursH2;
+    return hoursDiv.appendChild(hoursH2);
 }
 
 function addLocationToContent(){
+    const locationDiv = document.createElement("div");
     const locationH2 = document.createElement("h2");
     locationH2.textContent="Location";
     const p = document.createElement("p");
     p.textContent = "345 Atlantis, Bermuda Triangle, Pacific Ocean";
     locationH2.appendChild(p);
-    return locationH2;
-}
+    return locationDiv.appendChild(locationH2);
+}   
